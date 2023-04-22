@@ -4,6 +4,7 @@ public class la1q4
     public static void main(String[] args) 
     {
         StringBuffer s = new StringBuffer("carbon");
+        System.out.println("The possible combinations of words are as follows : ");
         printpermutations(s);
         
     }
