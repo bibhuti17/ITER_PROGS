@@ -3,7 +3,7 @@ public class la1q1
     public static void main(String [] args)
     {
         la1q1 obj = new la1q1();
-        int N = 73;
+        int N = Integer.parseInt(args[0]);
         System.out.println("The integer input taken from command line is "+N+" .");
         System.out.println("The number of times the number could be diveded by 2 is "+obj.countDivision(N)+" times.");
     }
@@ -17,4 +17,12 @@ public class la1q1
         }
         return count ;
     }
+}
+
+class output
+{
+    /*
+     * The integer input taken from command line is 73 .
+       The number of times the number could be diveded by 2 is 5 times.
+    */
 }

@@ -1,9 +1,10 @@
+import java.util.*;
 public class la1q3 
 {
     static boolean checkSpy(int n)
     {
         int sum = 0 , product = 1;
-        for (;n>0;n/=2)
+        while (n > 0)
         {
             sum += n%10;
             product *= n%10;
@@ -12,8 +13,22 @@ public class la1q3
         return (sum==product);
     }
 
-    public static void main(String[] args) {
-        System.out.println(checkSpy(132));
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number : ");int N = sc.nextInt();sc.close();
+        System.out.println("The number is a spy number : "+checkSpy(N));
+
+
+        
     }
     
+}
+
+class output
+{
+    /*
+    Enter a number : 1124
+    The number is a spy number : true
+     */
 }
