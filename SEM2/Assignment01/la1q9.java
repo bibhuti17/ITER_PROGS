@@ -49,3 +49,20 @@ public class la1q9
         
     }
 }
+
+class output_9
+{
+    /*
+    Enter the rows and coloumns of the matrix : 4 4
+    Enter the elements of the array -
+    4 5 2 6 
+    1 2 4 3
+    4 5 6 7
+    4 2 7 9
+    4.0     5.0     2.0     6.0
+    1.0     2.0     4.0     3.0
+    4.0     5.0     6.0     7.0
+    4.0     2.0     7.0     9.0
+    The sum of the major diagonal is 21 .
+     */
+}

@@ -27,6 +27,8 @@ public class la1q6
 class output_6
 {
     /*
-    
+    Enter the number : 25447
+    The number  is odd : true
+    The number  is odd : true
      */
 }

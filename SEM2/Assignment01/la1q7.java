@@ -58,3 +58,14 @@ public class la1q7
         return max;
     }
 }
+
+class output_7
+{
+    /*
+    Enter the length of the array : 7
+    Enter the elements of the array.....6 3 2 7 8 9 6
+    Maximun element of the array is 9 and has occured 1
+    Minimum element of the array is 2 and has occured 1
+    The first occurance of the minimum element is 2
+     */
+}

@@ -15,5 +15,17 @@ public class ha1q1
         (a * b == c) ? (a + " * " + b + " = " + c) :
         "The values cannot be used in a correct arithmetic formula.");
     }
-    
+}
+
+
+class output1
+{
+    /*
+    Enter the three numbers (say) a,b,c : 2 3 5
+    2 + 3 = 5
+
+
+    Enter the three numbers (say) a,b,c : 2 3 4
+    The values cannot be used in a correct arithmetic formula.
+     */
 }

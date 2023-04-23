@@ -1,8 +1,8 @@
-public class ha1q4 {
+import java.util.*;
+public class ha1q4 
+{
     public static double[][] addMatrix(double[][] a, double[][] b) {
-        if (a.length != b.length || a[0].length != b[0].length) {
-            throw new IllegalArgumentException("Matrices must have the same dimensions");
-        }
+        
         
         int numRows = a.length;
         int numCols = a[0].length;
@@ -18,9 +18,29 @@ public class ha1q4 {
     }
     
     public static void main(String[] args) {
-        double[][] a = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
-        double[][] b = {{9.0, 8.0, 7.0}, {6.0, 5.0, 4.0}, {3.0, 2.0, 1.0}};
-        
+        double[][] a;double[][] b;
+        Scanner sc = new Scanner(System.in); 
+        System.out.print("Enter the row and coloumn of the 1st matrix : ");int r1 = sc.nextInt(), c1 = sc.nextInt();
+        a = new double[r1][c1];
+        System.out.println("Enter the elements of the matrix : ");
+        for (int i = 0;i < a.length; i++)
+        {
+            for (int j = 0;j < a[i].length;j++)
+            {
+                a[i][j]=sc.nextInt();
+            }
+        }
+        System.out.print("Enter the row and coloumn of the 2st matrix : ");int r2 = sc.nextInt(), c2 = sc.nextInt();
+        b = new double[r2][c2];
+        System.out.println("Enter the elements of the matrix : ");
+        for (int i = 0;i < b.length; i++)
+        {
+            for (int j = 0;j < b[i].length;j++)
+            {
+                b[i][j]=sc.nextInt();
+            }
+        }
+        sc.close();
         double[][] result = addMatrix(a, b);
         
         System.out.println("Matrix a:");
@@ -33,13 +53,41 @@ public class ha1q4 {
         printMatrix(result);
     }
     
-    public static void printMatrix(double[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
+    public static void printMatrix(double[][] matrix) 
+    {
+        for (int i = 0; i < matrix.length; i++) 
+        {
+            for (int j = 0; j < matrix[0].length; j++) 
+            {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
         System.out.println();
     }
+}
+
+class output4
+{
+    /*
+    Enter the row and coloumn of the 1st matrix : 2 3
+    Enter the elements of the matrix :
+    4 2 3
+    1 2 3
+    Enter the row and coloumn of the 2st matrix : 2 3
+    Enter the elements of the matrix :
+    1 2 3
+    4 2 9
+    Matrix a:
+    4.0 2.0 3.0
+    1.0 2.0 3.0
+
+    Matrix b:
+    1.0 2.0 3.0
+    4.0 2.0 9.0
+
+    Matrix sum:
+    5.0 4.0 6.0
+    5.0 4.0 12.0
+     */
 }
