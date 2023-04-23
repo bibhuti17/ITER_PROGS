@@ -25,10 +25,13 @@ public class la1q3
     
 }
 
-class output
+class output_3
 {
     /*
     Enter a number : 1124
     The number is a spy number : true
+    
+    Enter a number : 1125
+    The number is a spy number : false
      */
 }

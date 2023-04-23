@@ -20,7 +20,7 @@ public class la1q2
   }  
 }
 
-class output
+class output_2
 {
   /*
     Enter the person's weight in kg : 68

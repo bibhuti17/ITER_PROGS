@@ -19,7 +19,7 @@ public class la1q1
     }
 }
 
-class output
+class output_1
 {
     /*
      * The integer input taken from command line is 73 .
