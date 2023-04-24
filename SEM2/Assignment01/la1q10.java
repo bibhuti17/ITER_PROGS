@@ -1,13 +1,13 @@
 import java.util.*;
 public class la1q10
 {
-    public static int calc_col_sum(double [][]mat,int col)
+    public static double sumColoumn(double [][]m,int colIndex)
     {
         int sum = 0;
-        for(int i = 0; i < mat.length ; i++)
+        for(int i = 0; i < m.length ; i++)
         {
             
-            sum += mat[i][col];
+            sum += m[i][colIndex];
             
         }
         return sum;
@@ -45,7 +45,7 @@ public class la1q10
 
         for (int i = 0; i < col;i++)
         {
-            System.out.println("The sum of the coloumn "+i+" is "+calc_col_sum(matrix,i));
+            System.out.println("The sum of the elements of coloumn "+i+" is "+sumColoumn(matrix,i));
         }
     }
 }

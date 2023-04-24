@@ -1,7 +1,7 @@
 import java.util.*;
 public class la1q9 
 {
-    public static int sumMajorDiagonl(double[][] m)
+    public static double sumMajorDiagonl(double[][] m)
     {
         int sum = 0;
         for (int i = 0; i < m.length ;i++)
