@@ -10,6 +10,7 @@ public class la1q7 {
         for (int i=0 ; i<size ; i++) {
             arr[i] = sc.nextInt();
         }
+        sc.close();
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
         int max_occur = 0;
