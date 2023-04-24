@@ -1,71 +1,55 @@
 import java.util.*;
-public class la1q7 
-{
-    public static void main(String[] args) 
-    {
+public class la1q7 {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the length of the array : ");int N = sc.nextInt();
-        int array[] = new int[N];
-        System.out.print("Enter the elements of the array.....");
-        for (int i = 0;i < array.length;i++)
-        {
-            array[i]=sc.nextInt();
+        System.out.print("Enter length of Array : ");
+        int size = sc.nextInt();
+
+        int arr[] = new int[size];
+        System.out.print("Enter the elements of the arrays : ");
+        for (int i=0 ; i<size ; i++) {
+            arr[i] = sc.nextInt();
         }
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int max_occur = 0;
+        int min_occur = 0;
+        int first_max_postion = 0;
+        int last_min_postion = 0;
+
+        for (int i=0 ; i<arr.length ; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                max_occur = 1;
+                first_max_postion = i;
+            } else  if (arr[i] == max) {
+                max_occur++;
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+                min_occur = 1;
+                last_min_postion = i;
+            } else if (arr[i] == min) {
+                min_occur++;
+                last_min_postion = i;
+            }
+        }
+        System.out.println("Maximum element of Array is " + max + " and occurs " + max_occur + " times");
+        System.out.println("Minimum element of Array is " + min + " and occurs " + min_occur + " times");
+        System.out.println("First occurrence of maximum element is at position " + (first_max_postion + 1));
+        System.out.println("Last occurrence of minimum element is at position " + (last_min_postion + 1));
         sc.close();
-
-        System.out.println("Maximun element of the array is "+maxArray(array)+" and has occured "+checkRep(array,maxArray(array)));
-        System.out.println("Minimum element of the array is "+minArray(array)+" and has occured "+checkRep(array,minArray(array)));
-        System.out.println("The first occurance of the minimum element is "+array[minArray(array)]);
-        System.out.println("The first occurance of the maximum element is "+array[maxArray(array)]);
-
-        
-    }
-    public static int checkRep(int a[],int rep_num)
-    {
-        int count = 0;
-        for (int i = 0;i < a.length; i++)
-        {
-            if (a[i]==rep_num)
-            {
-                count ++;
-            }
-        }
-        return count;
-    }
-    public static int minArray(int a[])
-    {
-        int min = a[0];
-        for (int i = 0;i < a.length;i++)
-        {
-            if (min > a[i])
-            {
-                min = a[i];
-            }
-        }
-        return min;
-    }
-
-    public static int maxArray(int a[])
-    {
-        int max = a[0];
-        for (int i = 0;i < a.length;i++)
-        {
-            if (max < a[i])
-            {
-                max = a[i];
-            }
-        }
-        return max;
     }
 }
 
 class output_7
 {
     /*
-    Enter the length of the array : 7
-    Enter the elements of the array.....6 3 2 7 8 9 6
-    Maximun element of the array is 9 and has occured 1
-    Minimum element of the array is 2 and has occured 1
-    The first occurance of the minimum element is 2
+    Enter length of Array : 10
+    Enter the elements of the arrays : 2 3 2 1 5 3 4 7 12 1
+    Maximum element of Array is 12 and occurs 1 times
+    Minimum element of Array is 1 and occurs 2 times
+    First occurrence of maximum element is at position 9
+    Last occurrence of minimum element is at position 10
      */
 }
