@@ -46,11 +46,11 @@ public class la1q7 {
 class output_7
 {
     /*
-    Enter length of Array : 10
-    Enter the elements of the arrays : 2 3 2 1 5 3 4 7 12 1
-    Maximum element of Array is 12 and occurs 1 times
-    Minimum element of Array is 1 and occurs 2 times
-    First occurrence of maximum element is at position 9
-    Last occurrence of minimum element is at position 10
+    Enter length of Array : 5
+    Enter the elements of the arrays : 12 14 12 13 14
+    Maximum element of Array is 14 and occurs 2 times.
+    Minimum element of Array is 12 and occurs 2 times.
+    First occurrence of maximum element is at position 2
+    Last occurrence of minimum element is at position 3
      */
 }
