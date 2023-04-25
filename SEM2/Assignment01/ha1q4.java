@@ -27,7 +27,7 @@ public class ha1q4
         {
             for (int j = 0;j < a[i].length;j++)
             {
-                a[i][j]=sc.nextInt();
+                a[i][j]=sc.nextDouble();
             }
         }
         System.out.print("Enter the row and coloumn of the 2st matrix : ");int r2 = sc.nextInt(), c2 = sc.nextInt();
@@ -37,11 +37,11 @@ public class ha1q4
         {
             for (int j = 0;j < b[i].length;j++)
             {
-                b[i][j]=sc.nextInt();
+                b[i][j]=sc.nextDouble();
             }
         }
         sc.close();
-        double[][] result = addMatrix(a, b);
+        double result[][] = addMatrix(a, b);
         
         System.out.println("Matrix a:");
         printMatrix(a);
