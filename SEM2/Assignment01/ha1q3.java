@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 public class ha1q3 
 {
@@ -40,8 +42,7 @@ public class ha1q3
     }
 }
 
-class output3 
-{
+
     /*
     Enter the length of the arrays : 4
     Enter the elements of first array : 
@@ -51,4 +52,3 @@ class output3
     Dot product of arrays a and b:
     [20, 12, 12, 12]
      */
-}

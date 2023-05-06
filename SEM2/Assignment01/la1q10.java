@@ -1,3 +1,4 @@
+package SEM2.Assignment01;
 import java.util.*;
 public class la1q10
 {
@@ -50,8 +51,7 @@ public class la1q10
     }
 }
 
-class output_10
-{
+
     /*
     Enter the number of rows and coloumns : 3 4
     Enter the elements of matrix : 
@@ -66,5 +66,5 @@ class output_10
     The sum of the coloumn 2 is 11
     The sum of the coloumn 3 is 13
      */
-}
+
 

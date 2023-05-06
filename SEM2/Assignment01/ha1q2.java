@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.Scanner;
 
 public class ha1q2 
@@ -24,8 +26,7 @@ public class ha1q2
     }
 }
 
-class output4 
-{
+ 
     /*
     Enter the No of Lines : 4
     Enter the Lines :
@@ -38,4 +39,3 @@ class output4
     coder
     hello
      */
-}

@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 
 public class ha1q5{
@@ -84,8 +86,7 @@ public class ha1q5{
     }
 }
 
-class output5 
-{
+
     /*
     Enter the number of rows and columns of the matrix: 4 4
     1 1 1 1
@@ -95,4 +96,4 @@ class output5
     Row index with the most ones: 01
     Column index with the most ones: 01
      */
-}
+

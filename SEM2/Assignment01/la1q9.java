@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 public class la1q9 
 {
@@ -50,8 +52,7 @@ public class la1q9
     }
 }
 
-class output_9
-{
+
     /*
     Enter the rows and coloumns of the matrix : 4 4
     Enter the elements of the array -
@@ -65,4 +66,4 @@ class output_9
     4.0     2.0     7.0     9.0
     The sum of the major diagonal is 21 .
      */
-}
+

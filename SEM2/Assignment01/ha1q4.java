@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 public class ha1q4 
 {
@@ -67,8 +69,7 @@ public class ha1q4
     }
 }
 
-class output4
-{
+ 
     /*
     Enter the row and coloumn of the 1st matrix : 2 3
     Enter the elements of the matrix :
@@ -90,4 +91,4 @@ class output4
     5.0 4.0 6.0
     5.0 4.0 12.0
      */
-}
+

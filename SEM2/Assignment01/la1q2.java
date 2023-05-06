@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 public class la1q2 
 {
@@ -20,8 +22,7 @@ public class la1q2
   }  
 }
 
-class output_2
-{
+
   /*
     Enter the person's weight in kg : 68
     Enter the person's height in meter : 2
@@ -32,4 +33,3 @@ class output_2
     The person is underweight.
    
    */
-}

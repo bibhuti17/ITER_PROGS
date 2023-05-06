@@ -1,4 +1,4 @@
-
+package SEM2.Assignment01;
 public class la1q4 
 {
     public static void main(String[] args) 
@@ -55,8 +55,7 @@ public class la1q4
     
 }
 
-class output_4
-{
+ 
     /*
     The possible combinations of words are as follows : 
 carbon
@@ -521,4 +520,4 @@ ronbca
 roncab
 roncba
      */
-}
+

@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.Scanner;
 
 public class la1q5 
@@ -29,10 +31,9 @@ public class la1q5
     }
 }
 
-class output_5
-{
+
     /*
     Enter a number : 124663
     The sum of the digits of the number till it is a single digit number is : 4
      */
-}
+

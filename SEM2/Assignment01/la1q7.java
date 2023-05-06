@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 public class la1q7 {
     public static void main(String[] args) {
@@ -43,8 +45,7 @@ public class la1q7 {
     }
 }
 
-class output_7
-{
+ 
     /*
     Enter length of Array : 5
     Enter the elements of the arrays : 12 14 12 13 14
@@ -53,4 +54,3 @@ class output_7
     First occurrence of maximum element is at position 2
     Last occurrence of minimum element is at position 3
      */
-}

@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 public class ha1q1 
 {
@@ -18,8 +20,7 @@ public class ha1q1
 }
 
 
-class output1
-{
+
     /*
     Enter the three numbers (say) a,b,c : 2 3 5
     2 + 3 = 5
@@ -28,4 +29,3 @@ class output1
     Enter the three numbers (say) a,b,c : 2 3 4
     The values cannot be used in a correct arithmetic formula.
      */
-}

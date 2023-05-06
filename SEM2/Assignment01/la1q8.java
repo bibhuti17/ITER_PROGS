@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 import java.util.*;
 public class la1q8 
 {
@@ -46,8 +48,7 @@ public class la1q8
     } 
 }
 
-class output_8
-{
+ 
     /*
     Enter the rows and coloumns of the 2-D matrix : 2 3
     Enter the elements of the array .......
@@ -58,4 +59,4 @@ class output_8
     1       24      4
     The sum of the elements of the 2-D array is 40
      */
-}
+
