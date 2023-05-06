@@ -1,3 +1,5 @@
+package SEM2.Assignment01;
+
 public class la1q1 
 {
     public static void main(String [] args)
