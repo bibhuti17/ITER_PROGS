@@ -1,12 +1,11 @@
 package SEM2.Assignment02;
- /*Question-2:
+/*Question-2:
     Define a class called Complex with instance variables real, imag and instance methods
     setData(), display(), add(). Write a Java program to add two complex numbers.
     The prototype of add method is: 
     public Complex add(Complex, Complex).*/
 
-public class la2q2 
-{
+public class la2q2 {
     public static void main(String[] args) {
         Complex c1 = new Complex();
         Complex c2 = new Complex();
@@ -22,14 +21,14 @@ public class la2q2
         c2.display();
 
         sum = sum.add(c1, c2);
-        System.out.print("Sum of the two complex numbers: ");
+        System.out.print("Sum of the two complex numbers : ");
         sum.display();
     }
 }
 
 class Complex {
-    private double real;
-    private double imag;
+    public double real;
+    public double imag;
 
     // Method to set the real and imaginary parts of the complex number
     public void setData(double real, double imag) {
@@ -52,4 +51,12 @@ class Complex {
 
     
 }
+
+/*
+ * Output:
+ *  Complex number 1: 3.0 + 4.0i
+    Complex number 2: 5.0 + 6.0i
+    Sum of the two complex numbers : 8.0 + 10.0i
+ */
+
 

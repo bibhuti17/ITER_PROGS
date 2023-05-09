@@ -1,8 +1,5 @@
 package SEM2.Assignment02;
-import java.util.*;
-public class la2q3 
-{
-    /*
+/*
      *Question-3:
     Define a class called Student with instance variables Roll, Name, DSA_Mark. Also, the class 
     consists of instance methods getdata( ), showdata( ) to provide input to the instance variable 
@@ -10,13 +7,31 @@ public class la2q3
     Display the information of the students who has secured the highest DSA 
      */
     
+import java.util.*;
+public class la2q3 
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student[] students = new Student[5];
+
+     
+        for (int i = 0; i < students.length; i++) {
+            students[i] = new Student();
+            System.out.println("Enter details for student " + (i+1) + ":");
+            students[i].getdata();
+        }
+        Student topper = Student.findTopper(students);
+        System.out.println("Details of the student with the highest DSA_Marks:");
+        topper.showdata();
+        sc.close();
+        }
 }
 
 
 class Student {
-    private int Roll;
-    private String Name;
-    private double DSA_Mark;
+    public int Roll;
+    public String Name;
+    public double DSA_Mark;
 
     // Method to get input from the user and set the values of the instance variables
     public void getdata() {
@@ -49,24 +64,5 @@ class Student {
         return topper;
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Student[] students = new Student[5];
-
-        // Get input from the user for each student
-        for (int i = 0; i < students.length; i++) {
-            students[i] = new Student();
-            System.out.println("Enter details for student " + (i+1) + ":");
-            students[i].getdata();
-        }
-
-        // Find the student with the highest DSA_Mark
-        Student topper = Student.findTopper(students);
-
-        // Display the details of the topper
-        System.out.println("Details of the student with the highest DSA_Marks:");
-        topper.showdata();
-        sc.close();
-    }
 }
 

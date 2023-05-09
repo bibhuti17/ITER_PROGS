@@ -1,14 +1,18 @@
 package SEM2.Assignment02;
-
+/*Question-6: 
+Create an abstract class Shape and the derived classes Square, Triangle and Circle. Write a java program to display area of different shapes.*/
 public class la2q6 
 {
-    /*
-     * Question-6: 
- 
-    Create an abstract class Shape and the derived classes Square, Triangle and Circle. Write a
-    java program to display area of different shapes.
-    */
-    
+    public static void main(String[] args) {
+        Shape[] shapes = new Shape[3];
+        shapes[0] = new Square(5.0);
+        shapes[1] = new Triangle(4.0, 3.0);
+        shapes[2] = new Circle(2.0);
+
+        for (Shape s : shapes) {
+            System.out.println("Area of shape: " + s.area());
+        }
+    }
 }
 
 abstract class Shape {
@@ -34,15 +38,6 @@ class Circle extends Shape {
 }
 
 class Main {
-    public static void main(String[] args) {
-        Shape[] shapes = new Shape[3];
-        shapes[0] = new Square(5.0);
-        shapes[1] = new Triangle(4.0, 3.0);
-        shapes[2] = new Circle(2.0);
-
-        for (Shape s : shapes) {
-            System.out.println("Area of shape: " + s.area());
-        }
-    }
+    
 }
 
