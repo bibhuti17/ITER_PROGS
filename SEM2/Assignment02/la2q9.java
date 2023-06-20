@@ -24,7 +24,7 @@ public class la2q9 {
     }
 }
 
-class student {
+class student_8 {
     int rollNumber;
     String name;
     String course;
@@ -48,7 +48,7 @@ class student {
     }
 }
 
-class Exam extends student {
+class Exam extends student_8 {
     int mark1;
     int mark2;
     int mark3;

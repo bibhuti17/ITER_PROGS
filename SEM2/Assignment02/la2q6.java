@@ -37,7 +37,6 @@ class Circle extends Shape {
     double area() { return Math.PI * radius * radius; }
 }
 
-class Main {
-    
-}
-
+/*Area of shape: 25.0
+    Area of shape: 6.0
+    Area of shape: 12.566370614359172 */

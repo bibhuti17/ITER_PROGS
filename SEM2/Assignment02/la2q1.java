@@ -49,7 +49,7 @@ class Phone {
     }
 }
 /*
- * Output: 
+ * Output:-
  * Enter area code : 212
     Enter the exchange code : 253
     Enter the number : 9932

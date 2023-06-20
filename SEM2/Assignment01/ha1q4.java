@@ -69,6 +69,9 @@ public class ha1q4
     }
 }
 
+
+ 
+
  
     /*
     Enter the row and coloumn of the 1st matrix : 2 3

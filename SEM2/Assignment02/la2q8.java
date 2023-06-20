@@ -6,8 +6,8 @@ name of a person, count the no. of characters present in the name of the person.
 
 public class la2q8 {
     public static void main(String[] args) {
-        person p1 = new person("Milkha Singh");
-        person p2 = new person("Ashish Singh");
+        person_1 p1 = new person_1("Milkha Singh");
+        person_1 p2 = new person_1("Ashish Singh");
     
         p1.display();
         System.out.println("No. of characters in name : " + p1.count());
@@ -15,7 +15,7 @@ public class la2q8 {
         p2.display();
         System.out.println("No. of characters in name : " + p2.count());
     
-        System.out.println("Maximum character count : " + person.getMaxcount());
+        System.out.println("Maximum character count : " + person_1.getMaxcount());
     }
 }
 
@@ -25,11 +25,11 @@ interface DetailInfo{
     int count();
 }
   
-class person implements DetailInfo {
+class person_1 implements DetailInfo {
     public static int maxcount = 0;
     public String name;
   
-    public person(String name) {
+    public person_1(String name) {
       this.name = name;
     }
   

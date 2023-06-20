@@ -13,37 +13,93 @@ Sample Run:
 A “steak dinner” costing Rs. 600 is a “room service” provided 
 to room 1202 for Rs 24.00 fee.
 The total fee to pay is Rs 624. */
-import java.util.*;
-public class ha2q5 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        RoomServiceMeal MS1 = new RoomServiceMeal();
-        MS1.display();
+import java.util.Scanner;
 
-        //RoomServiceMeal MS2 = new RoomServiceMeal();
-        //System.out.print("Enter the name of the food item : ");String name = sc.nextLine();
-        //System.out.print("Enter the price of the food item : ");double price = sc.nextDouble();sc.nextLine();
-        //System.out.print("Enter the name of the service : ");String Sname = sc.nextLine();
-        //System.out.print("Enter the service charges : ");double charges = sc.nextDouble();
-        //MS2.display();
-        sc.close();
+interface RestaurantMeal {
+    String getName();
+    double getPrice();
+}
+
+interface HotelService {
+    String getServiceName();
+    double getServiceFee();
+    int getRoomNumber();
+}
+
+class RoomServiceMeal implements RestaurantMeal, HotelService {
+    private String name;
+    private double price;
+    private String serviceName;
+    private double serviceFee;
+    private int roomNumber;
+
+    public RoomServiceMeal(String name, double price, String serviceName, double serviceFee, int roomNumber) {
+        this.name = name;
+        this.price = price;
+        this.serviceName = serviceName;
+        this.serviceFee = serviceFee;
+        this.roomNumber = roomNumber;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    @Override
+    public double getServiceFee() {
+        return serviceFee;
+    }
+
+    @Override
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void display() {
+        System.out.println("Meal: " + getName());
+        System.out.println("Price: Rs " + getPrice());
+        System.out.println("Service: " + getServiceName());
+        System.out.println("Service Fee: Rs " + getServiceFee());
+        System.out.println("Room Number: " + getRoomNumber());
+        System.out.println("Total Cost: Rs " + (getPrice() + getServiceFee()));
     }
 }
-interface RestaurantMeal{
-    String foodName = "steak dinner";
-    double foodPrice = 600;
-}
-interface HotelService{
-    String serviceName = "room service";
-    double serviceFee = 24;
-    int roomNo = 1202;
-} 
 
-class RoomServiceMeal implements RestaurantMeal,HotelService{
-    public RoomServiceMeal(){}
-     
-    public void display(){
-        System.out.println("Food ordered is "+foodName+" costing Rs."+foodPrice+"\n Service provided is "+serviceName+" charge is "+serviceFee);
-        System.out.println("The total bill to be paid is "+(foodPrice+serviceFee));
+public class ha2q5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the name of the meal: ");
+        String mealName = scanner.nextLine();
+
+        System.out.print("Enter the price of the meal: ");
+        double mealPrice = scanner.nextDouble();
+
+        scanner.nextLine(); // Clear the input buffer
+
+        System.out.print("Enter the name of the service: ");
+        String serviceName = scanner.nextLine();
+
+        System.out.print("Enter the service fee: ");
+        double serviceFee = scanner.nextDouble();
+
+        System.out.print("Enter the room number: ");
+        int roomNumber = scanner.nextInt();
+
+        RoomServiceMeal meal = new RoomServiceMeal(mealName, mealPrice, serviceName, serviceFee, roomNumber);
+        meal.display();
+
+        scanner.close();
     }
 }

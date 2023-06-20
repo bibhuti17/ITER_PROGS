@@ -20,9 +20,6 @@ public class la1q3
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");int N = sc.nextInt();sc.close();
         System.out.println("The number is a spy number : "+checkSpy(N));
-
-
-        
     }
     
 }
@@ -32,6 +29,5 @@ public class la1q3
     The number is a spy number : true
     
     Enter a number : 1125
-    The number is a spy number : false
-     */
+    The number is a spy number : false*/
  

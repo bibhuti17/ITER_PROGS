@@ -55,6 +55,23 @@ public class la1q4
     
 }
 
+/*class alternate {
+    char[] c = {'C','A','R','B','N'};
+    for (int i = 0; i < c.length ; i++) {
+        for (int j = 0; j < c.length; j++){
+            for (int k = 0; j < c.length; k++){
+                for (int l = 0; j < c.length; l++){
+                    for (int m = 0; j < c.length; m++){
+                        for (int n = 0; j < c.length; n++){
+                            if (i != j && j != k)
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+ */
  
     /*
     The possible combinations of words are as follows : 
