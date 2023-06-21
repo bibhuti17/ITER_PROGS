@@ -13,12 +13,12 @@ public class la2q9 {
         for (int i = 0; i < examArray.length; i++) {
             System.out.println("Enter details for student " + (i+1) + ":");
             examArray[i] = new Exam();
-            examArray[i].input_Student();
             examArray[i].input_Marks();
         }
+        
         for (int i = 0; i < examArray.length; i++) {
             System.out.println("Details and result for student " + (i+1) + ":");
-            examArray[i].display_Student();
+            
             examArray[i].display_Result();
         }
     }
@@ -38,7 +38,7 @@ class student_8 {
         name = sc.nextLine();
         System.out.print("Enter course: ");
         course = sc.nextLine();
-        sc.close();
+        
     }
 
     void display_Student() {
@@ -54,6 +54,7 @@ class Exam extends student_8 {
     int mark3;
 
     void input_Marks() {
+        super.input_Student();
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter marks for Subject 1: ");
         mark1 = sc.nextInt();
@@ -61,14 +62,86 @@ class Exam extends student_8 {
         mark2 = sc.nextInt();
         System.out.print("Enter marks for Subject 3: ");
         mark3 = sc.nextInt();
-        sc.close();
+        
     }
 
     void display_Result() {
+        super.display_Student();
         System.out.println("Marks for Subject 1: " + mark1);
         System.out.println("Marks for Subject 2: " + mark2);
         System.out.println("Marks for Subject 3: " + mark3);
     }
 }
 
- 
+/*
+Enter details for student 1:
+Enter roll number: 1
+Enter name: Ram
+Enter course: Economics
+Enter marks for Subject 1: 66
+Enter marks for Subject 2: 66
+Enter marks for Subject 3: 66
+Enter details for student 2:
+Enter roll number: 2
+Enter name: Samay
+Enter course: Philosopy
+Enter marks for Subject 1: 22
+Enter marks for Subject 2: 32
+Enter marks for Subject 3: 32
+Enter details for student 3:
+Enter roll number: 3
+Enter name: Zakena
+Enter course: DSA
+Enter marks for Subject 1: 23
+Enter marks for Subject 2: 32
+Enter marks for Subject 3: 34
+Enter details for student 4:
+Enter roll number: 4
+Enter name: Efjfu  
+Enter course: IGT
+Enter marks for Subject 1: 32
+Enter marks for Subject 2: 32
+Enter marks for Subject 3: 2
+Enter details for student 5:
+Enter roll number: 5
+Enter name: Umaran
+Enter course: Bowling
+Enter marks for Subject 1: 23
+Enter marks for Subject 2: 32
+Enter marks for Subject 3: 78
+Details and result for student 1:
+Roll Number: 1
+Name: Ram
+Course: Economics
+Marks for Subject 1: 66
+Marks for Subject 2: 66
+Marks for Subject 3: 66
+Details and result for student 2:
+Roll Number: 2
+Name: Samay
+Course: Philosopy
+Marks for Subject 1: 22
+Marks for Subject 2: 32
+Marks for Subject 3: 32
+Details and result for student 3:
+Roll Number: 3
+Name: Zakena
+Course: DSA
+Marks for Subject 1: 23
+Marks for Subject 2: 32
+Marks for Subject 3: 34
+Details and result for student 4:
+Roll Number: 4
+Name: Efjfu
+Course: IGT
+Marks for Subject 1: 32
+Marks for Subject 2: 32
+Marks for Subject 3: 2
+Details and result for student 5:
+Roll Number: 5
+Name: Umaran
+Course: Bowling
+Marks for Subject 1: 23
+Marks for Subject 2: 32
+Marks for Subject 3: 78 
+*/ 
