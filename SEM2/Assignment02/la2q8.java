@@ -50,5 +50,9 @@ class person_1 implements DetailInfo {
     }
 }
   
-   
+/*Name: Milkha Singh
+No. of characters in name : 12
+Name: Ashish Singh
+No. of characters in name : 12
+Maximum character count : 12 */ 
   

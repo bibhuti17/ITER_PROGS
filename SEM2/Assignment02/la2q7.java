@@ -18,11 +18,8 @@ public class la2q7{
         System.out.println("Enter name,age,Eid,salary , respectively.");
         for (int i = 0; i < empl.length; i++){
             
-            empl[i] = new Employee();
-            empl[i].name = sc.nextLine();
-            empl[i].age = sc.nextInt();
-            empl[i].Eid = sc.nextInt();
-            empl[i].salary = sc.nextDouble();
+            
+            empl[i] = new Employee(sc.next(),sc.nextInt(),sc.nextInt(),sc.nextDouble());
             empl[i].empDisplay();
         }
         sc.close();
@@ -32,9 +29,7 @@ public class la2q7{
 class Person{
     String name;
     int age;
-    public Person(){
-
-    }
+    
     public Person(String name, int age){
         this.name=name;
         this.age=age;
@@ -44,9 +39,7 @@ class Person{
 class Employee extends Person{
     int Eid;
     double salary;
-    public Employee(){
-
-    }
+    
     public Employee(String name,int age , int Eid , double salary){
         super(name,age);
         this.Eid=Eid;
@@ -61,3 +54,45 @@ class Employee extends Person{
         }
 }
 
+/*Enter the no. of persons 5
+Enter name,age,Eid,salary , respectively.
+Ramesh
+25
+54545
+70000
+Employee name : Ramesh
+Employee's age : 25
+Employee's id : 54545
+Employee's salary : 70000.0
+Ram
+30
+7586768
+600000 
+Employee name : Ram
+Employee's age : 30
+Employee's id : 7586768
+Employee's salary : 600000.0
+Sameer
+50
+87868
+50000000
+Employee name : Sameer
+Employee's age : 50
+Employee's id : 87868
+Employee's salary : 5.0E7
+Ehawn
+20
+677875767
+30000 
+Employee name : Ehawn
+Employee's age : 20
+Employee's id : 677875767
+Employee's salary : 30000.0
+Nihal
+30
+7757567
+500000
+Employee name : Nihal
+Employee's age : 30
+Employee's id : 7757567
+Employee's salary : 500000.0 */
