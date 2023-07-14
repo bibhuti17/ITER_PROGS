@@ -1,97 +1,326 @@
 package SEM2.Assignment04;
 
+import java.util.Scanner;
+
 public class SinglyLinkedList {
-	static java.util.Scanner sc = new java.util.Scanner(System.in);
-	static Node head = null;
-	static Node tail = null;
-	public static class Node {
-		private int regd_no; 
-		private float mark;
-		private Node next;
+    static Scanner sc = new Scanner(System.in);
+    public static int size = 0;
 
-		Node() {
-			this.next = null;
-		}
+    Node create(Node start) {
+        Node n = new Node();
+        System.out.println("Enter details --------------->");
+        n.setRegd_no(sc.nextInt());
+        n.setMarks(sc.nextFloat());
+        n.setNext(null);
+        start = n;
+        size++;
 
-		void setRegd_no(int r) {
-			this.regd_no = r;
-		}
-		void setMark (float m) {
-			this.mark = m;
-		}
-		void setNext (Node n) {
-			this.next = n;
-		}
-		
-		int getRegd_no () {
-			return regd_no;
-		}
-		float getMark () {
-			return mark;
-		}
-		Node getNext () {
-			return next;
-		}
-	}
-	
-	public static Node create(Node start) {
-		char choice;
-		do {
-			Node n = new Node();
-			System.out.println("Enter the registration no and mark -------------->");
-			n.setRegd_no(sc.nextInt());
-			n.setMark(sc.nextFloat());
+        System.out.print("If you want to enter more data (1) else (0) : ");
+        int ch = sc.nextInt();
 
-			if (head == null) {
-				head = n;
-				tail = n;
-			}
-			else {
-				tail.next = n;
-				tail = n;
-			}
-			System.out.println("If you want to enter again (enter y) : ");
-			choice = sc.next().charAt(0);
-		}
-		while(choice == 'y');
-		return head;
-	}
+        while (ch == 1) {
+            Node q = n;
+            n = new Node();
+            System.out.println("Enter details --------------->");
+            n.setRegd_no(sc.nextInt());
+            n.setMarks(sc.nextFloat());
+            n.setNext(null);
+            q.setNext(n);
+            size++;
+            System.out.println("If you want to enter more node (1) else (0)");
+            ch = sc.nextInt();
+        }
 
-	public static void display(Node start) {
-		if (start == null) {
-			System.out.println("List is empty!");
-		}
+        return start;
+    }
 
-		else {
-			Node currNode = head;
-			while (currNode != null) {
-				System.out.print(currNode.getRegd_no()+" : "+currNode.getMark() +"  ->  ");
-				currNode = currNode.next;
-			}
-			System.out.print("NULL");
 
-		}
-	
-	}
+    Node addBeg(Node start){
+        Node n = new Node();
+        System.out.println("Enter details --------------->");
+        n.setRegd_no(sc.nextInt());
+        n.setMarks(sc.nextFloat());
+        n.setNext(start);
+        size++;
+        System.out.println("Node inserted successfully...........");
+        return n;
+    }
 
-	public static Node addBeg(Node start) {
-		Node n2 = new Node();
-		System.out.println("Enter registration number and name ---------->");
-		n2.setRegd_no(sc.nextInt());n2.setMark(sc.nextFloat());
-		if (start == null) {
-			head = n2;
-		}
-		else {
-			head = n2;
-			n2 = head.next;
-		}
-		return head;
-	}
+    Node addLast(Node start) {
+        Node n = new Node();
+        System.out.println("Enter details --------------->");
+        n.setRegd_no(sc.nextInt());
+        n.setMarks(sc.nextFloat());
+        n.setNext(null);
 
-	public static void main(String[] args) {
-		create(head);
-		display(head);
-		addBeg(head);
-		addLast(head);
-	}
+        if (start == null) {
+            return n;
+        }
+
+        Node curr = start;
+        while (curr.getNext() != null) {
+            curr = curr.getNext();
+        }
+
+        curr.setNext(n);
+        System.out.println("Node inserted successfully...........");
+        return start;
+    }
+
+    Node addAny(Node start, int p) {
+        System.out.println("#####Zero based indexing.");
+        Node n = new Node();
+        System.out.println("Enter details --------------->");
+        n.setRegd_no(sc.nextInt());
+        n.setMarks(sc.nextFloat());
+
+        if (p == 0) {
+            return addBeg(start);
+        } else if (p == size) {
+            return addLast(start);
+        } else {
+            Node curr = start;
+            for (int i = 0; i < p-1; i++) {
+                curr = curr.getNext();
+            }
+            n.setNext(curr.getNext());
+            curr.setNext(n);
+            System.out.println("Node inserted successfully...........");
+            return start;
+        }
+    }
+
+    Node delBeg(Node start) {
+        if (start == null) {
+            System.out.println("Nothing to delete.........");
+            return null;
+        }
+
+        Node newStart = start.getNext();
+        System.out.println("Node deleted successfully...........");
+        return newStart;
+    }
+
+
+    Node delLast(Node start) {
+        if (start == null) {
+            System.out.println("Nothing to delete..........");
+            return null;
+        }
+
+        if (start.getNext() == null) {
+            return null;
+        }
+
+        Node secLast = start;
+        while (secLast.getNext().getNext() != null) {
+            secLast = secLast.getNext();
+        }
+        secLast.setNext(null);
+        System.out.println("Node deleted successfully...........");
+        return start;
+    }
+
+    Node delAny(Node start, int p) {
+        if (start == null) {
+            System.out.println("Nothing to delete........");
+            return null;
+        }
+
+        if (p == 0) {
+            return delBeg(start);
+        }
+        if (p == size) {
+            return delLast(start);
+        }
+
+        Node curr = start;
+        for (int i = 0; i < p-1; i++) {
+            curr = curr.getNext();
+        }
+        curr.setNext(curr.getNext().getNext());
+        System.out.println("Node deleted successfully...........");
+        return start;
+    }
+
+    Node delByRegd(Node start, int r) {
+        if (start == null) {
+            System.out.println("List is empty.");
+            return null;
+        }
+
+        if (start.getRegd_no() == r) {
+            System.out.println("Node is Deleted according to the Registration Number.");
+            return start.getNext();
+        }
+
+        Node currentNode = start;
+        Node previousNode = null;
+        while (currentNode != null && currentNode.getRegd_no() != r) {
+            previousNode = currentNode;
+            currentNode = currentNode.getNext();
+        }
+
+        if (currentNode == null) {
+            System.out.println("Node with the registration Number " + r + " has not been found.");
+            return start;
+        }
+
+        previousNode.setNext(currentNode.getNext());
+        currentNode.setNext(null);
+        System.out.println("Node deleted according to the registration Number.");
+        return start;
+    }
+
+    void search(Node start, int r) {
+        if (start == null) {
+            System.out.println("List is empty.............");
+            return;
+        }
+
+        Node curr = start;
+        Node search = null;
+        while (curr != null) {
+            if (curr.getRegd_no() == r) {
+                search = curr;
+                break;
+            }
+            curr = curr.getNext();
+        }
+
+        if (search != null) {
+            System.out.println(search.getRegd_no() + " " + search.getMarks());
+        } else {
+            System.out.println("Node with the registration Number " + r + " has not been found.");
+        }
+    }
+
+    Node reverse(Node start) {
+        Node previousNode = null;
+        Node currentNode = start;
+        Node nextNode = null;
+
+        while (currentNode != null) {
+            nextNode = currentNode.getNext();
+            currentNode.setNext(previousNode);
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+
+        start = previousNode;
+        return start;
+    }
+
+    Node sort(Node start) {
+            if (start == null || start.getNext() == null) {
+                return start; // No need to sort if the list is empty or has only one node
+            }
+
+            boolean swapped;
+            Node curr;
+            Node last = null;
+
+            do {
+                swapped = false;
+                curr = start;
+
+                while (curr.getNext() != last) {
+                    if (curr.getMarks() > curr.getNext().getMarks()) {
+                        // Swap the nodes
+                        float tempMarks = curr.getMarks();
+                        int tempRegd_no = curr.getRegd_no();
+
+                        curr.setMarks(curr.getNext().getMarks());
+                        curr.setRegd_no(curr.getNext().getRegd_no());
+
+                        curr.getNext().setMarks(tempMarks);
+                        curr.getNext().setRegd_no(tempRegd_no);
+
+                        swapped = true;
+                    }
+                    curr = curr.getNext();
+                }
+                last = curr;
+            } while (swapped);
+
+            return start;
+
+
+    }
+
+    void display(Node start) {
+        Node curr = start;
+        if (start == null) {
+            System.out.println("List is empty..........");
+            return;
+        }
+
+        while (curr != null) {
+            System.out.print("[ " + curr.getRegd_no() + " : " + curr.getMarks() + " ] -> ");
+            curr = curr.getNext();
+        }
+        System.out.println("NULL");
+    }
+
+    Node findMaxVal(Node start) {
+        if (start == null) {
+            System.out.println("List is empty..........");
+            return null;
+        }
+
+        Node maxNode = start;
+        Node current = start.getNext();
+
+        while (current != null) {
+            if (current.getMarks() > maxNode.getMarks()) {
+                maxNode = current;
+            }
+            current = current.getNext();
+        }
+
+        return maxNode;
+    }
+
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        Node start = null;
+
+        // Example usage of the modified methods
+        start = list.create();
+        list.display(start);
+
+        start = list.addBeg(start);
+        list.display(start);
+
+        start = list.addLast(start);
+        list.display(start);
+
+        start = list.addAny(start, 2);
+        list.display(start);
+
+        start = list.delBeg(start);
+        list.display(start);
+
+        start = list.delLast(start);
+        list.display(start);
+
+        start = list.delAny(start, 1);
+        list.display(start);
+
+        start = list.delByRegd(start, 123);
+        list.display(start);
+
+        list.search(start, 456);
+
+        start = list.reverse(start);
+        list.display(start);
+
+        start = list.sort(start);
+        list.display(start);
+
+        Node maxNode = list.findMaxVal(start);
+        if (maxNode != null) {
+            System.out.println("Max Value: " + maxNode.getRegd_no() + " : " + maxNode.getMarks());
+        }
+    }
 }
