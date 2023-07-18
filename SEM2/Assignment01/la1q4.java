@@ -63,7 +63,9 @@ public class la1q4
                 for (int l = 0; j < c.length; l++){
                     for (int m = 0; j < c.length; m++){
                         for (int n = 0; j < c.length; n++){
-                            if (i != j && j != k)
+                            if (i != j && j != k) {
+                                sop(i+" "+j+" ")
+                            }
                         }
                     }
                 }

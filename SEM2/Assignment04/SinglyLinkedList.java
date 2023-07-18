@@ -281,46 +281,5 @@ public class SinglyLinkedList {
         return maxNode;
     }
 
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        Node start = null;
-
-        // Example usage of the modified methods
-        start = list.create();
-        list.display(start);
-
-        start = list.addBeg(start);
-        list.display(start);
-
-        start = list.addLast(start);
-        list.display(start);
-
-        start = list.addAny(start, 2);
-        list.display(start);
-
-        start = list.delBeg(start);
-        list.display(start);
-
-        start = list.delLast(start);
-        list.display(start);
-
-        start = list.delAny(start, 1);
-        list.display(start);
-
-        start = list.delByRegd(start, 123);
-        list.display(start);
-
-        list.search(start, 456);
-
-        start = list.reverse(start);
-        list.display(start);
-
-        start = list.sort(start);
-        list.display(start);
-
-        Node maxNode = list.findMaxVal(start);
-        if (maxNode != null) {
-            System.out.println("Max Value: " + maxNode.getRegd_no() + " : " + maxNode.getMarks());
-        }
-    }
+    
 }
