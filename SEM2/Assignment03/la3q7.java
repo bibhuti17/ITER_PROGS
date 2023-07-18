@@ -2,7 +2,7 @@ package SEM2.Assignment03;
 
 public class la3q7 {
     public static int factorial(int n) {
-        if ((n == 0 )||( n == 1))
+        if (n == 0 )
             return 1;
         
         return n*factorial(n-1);
@@ -37,6 +37,13 @@ public class la3q7 {
         return a+product(a, b-1);
     }
     public static void main(String[] args) {
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        String op = sc.next();
+        switch(op) {
+            case "F" -> System.out.println("The factorial of the number is "+factorial(sc.nextInt()));
+            default -> System.out.println("invlaid!!!!!");
+        }
+        sc.close();
        System.out.println(factorial(5));
        System.out.println(exponent(2,3));
        System.out.println(GCD(8,40));

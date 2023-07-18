@@ -60,23 +60,7 @@ class PointType{
     }
 
 }
-/*OUTPUT:-
-Centre of the circle -----------> 
-Coordinates are : ()6.0 , 9.0).
-The radius of the circle ------------> 
-The radius of the circle is 7.0
-The area of circle ------------->
-The area of the circle :153.93804002589985
-The circumference of circle -------------->
-The circumference of the circle : 43.982297150257104
-New centre of circle ----------->
-9.0 7.0
 
-Radius : 11.0
-The area of circle ------------->
-The area of the circle :380.1327110843649
-The circumference of circle -------------->
-The circumference of the circle : 69.11503837897544 */
 
 class CircleType extends PointType{
     private double radius;
@@ -104,3 +88,20 @@ class CircleType extends PointType{
     }
 
 }
+/*OUTPUT:-
+Centre of the circle -----------> 
+Coordinates are : (6.0 , 9.0).
+The radius of the circle ------------> 
+The radius of the circle is 7.0
+The area of circle ------------->
+The area of the circle :153.93804002589985
+The circumference of circle -------------->
+The circumference of the circle : 43.982297150257104
+New centre of circle ----------->
+9.0 7.0
+
+Radius : 11.0
+The area of circle ------------->
+The area of the circle :380.1327110843649
+The circumference of circle -------------->
+The circumference of the circle : 69.11503837897544 */

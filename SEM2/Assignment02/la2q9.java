@@ -55,13 +55,14 @@ class Exam extends student_8 {
 
     void input_Marks() {
         super.input_Student();
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter marks for Subject 1: ");
-        mark1 = sc.nextInt();
-        System.out.print("Enter marks for Subject 2: ");
-        mark2 = sc.nextInt();
-        System.out.print("Enter marks for Subject 3: ");
-        mark3 = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter marks for Subject 1: ");
+            mark1 = sc.nextInt();
+            System.out.print("Enter marks for Subject 2: ");
+            mark2 = sc.nextInt();
+            System.out.print("Enter marks for Subject 3: ");
+            mark3 = sc.nextInt();
+        }
         
     }
 
