@@ -38,6 +38,7 @@ class student_8 {
         name = sc.nextLine();
         System.out.print("Enter course: ");
         course = sc.nextLine();
+        sc.close();
         
     }
 

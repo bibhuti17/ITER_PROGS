@@ -1,6 +1,6 @@
 package SEM2.Assignment04;
 
-import java.util.LinkedList;
+ 
 
 public class Demo {
     static Node head;
