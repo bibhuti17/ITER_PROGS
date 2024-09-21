@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void main() {
+void main()
+{
     int population, numToilet, numFlushesDay, waterSavedToilet, totalWaterSaved, costPerToilet, totalPrice;
 
     printf("Enter the population of the community: ");
