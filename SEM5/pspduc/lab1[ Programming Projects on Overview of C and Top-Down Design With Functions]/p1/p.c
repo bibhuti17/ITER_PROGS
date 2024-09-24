@@ -6,7 +6,7 @@
 //  energy. Note that the mass of one cubic meter of water is 1000 kg. Use 9.80 meters/second2
 //  as the gravitational constant g . Be sure to use meaningful names for both the gravitational
 //  constant and the 90% efficiency constant. For one run, use a height of 170 m and flow of
-//  1.30 × 103 m3/s. The relevant formula ( w = work, m = mass, g = gravity, h = height) is: w
+//  1.30 × 103 m3/s. The relevant formula ( w = work, m = mass, g = gravity, h = height) is: ws
 //  = mgh.
 
 // ANALYSIS
