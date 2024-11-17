@@ -9,15 +9,6 @@
 //  1.30 × 103 m3/s. The relevant formula ( w = work, m = mass, g = gravity, h = height) is: ws
 //  = mgh.
 
-// ANALYSIS
-// Function Definition:
-// The main() function is defined but incomplete. It should have a return type of int and a proper function signature, such as int main(void) or int main(int argc, char *argv[]).Variable Declarations:
-// Variables mass, h, and work are declared as double but the declaration is incomplete and lacks a semicolon (;).Input/Output Operations:
-// The printf function prompts the user to "Enter the flow" but the string is incomplete and contains a typo ('Wolf" instead of "Enter the flow:").The scanf function is used to read input but the format specifier and variable are missing or incorrect.Typographical Errors:
-// Several typographical errors exist, such as Drintf instead of printf and heieh instead of height.
-
-
-
 
 #include <stdio.h>
 #define g 9.8
