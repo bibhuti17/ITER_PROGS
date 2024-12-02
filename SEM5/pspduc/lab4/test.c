@@ -1,15 +1,16 @@
 #include <stdio.h>
+#include <math.h>
+
+int leap(int y){
+  return (y % 4 == 0 ? (y % 100 == 0 ? (y % 400 == 0 ? 1 : 0) : 1) : 0);
+
+}
 
 int main(){
-    int i = 72;
-    int *j = &i; // j is a pointer pointing to i (j is an integer pointer)
-    int k = 67;
-    printf("The address of i is %p\n", &i);
-    printf("The address of i is %p\n", j);
-    printf("The address of i is %p\n", &k);
 
-
-    printf("The value at address j is %d\n", *(&i));
-
+    if ((leap(2024)))
+    printf("1");
+    else 
+    printf("0");
     return 0;
 }
