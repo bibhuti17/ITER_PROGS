@@ -5,19 +5,19 @@ read day
 
 case $day in
   Monday)
-    echo "DOS class time: 10:00 AM - 11:00 AM, Room 101"
+    echo "DOS class time: 10:00 AM - 11:00 AM, C-111"
     ;;
   Tuesday)
-    echo "DOS class time: 12:00 PM - 1:00 PM, Room 202"
+    echo "DOS class time: 5:00 PM - 6:00 PM, C-111"
     ;;
   Wednesday)
-    echo "DOS class time: 2:00 PM - 3:00 PM, Room 303"
+    echo "DOS class time: 3:00 PM - 4:00 PM, C-111"
     ;;
   Thursday)
-    echo "DOS class time: 11:00 AM - 12:00 PM, Room 404"
+    echo "DOS class time: 11:00 AM - 1:00 PM, C-230"
     ;;
   Friday)
-    echo "DOS class time: 1:00 PM - 2:00 PM, Room 505"
+    echo "No class on $day"
     ;;
   Saturday)
     echo "No class on $day"
@@ -29,4 +29,5 @@ case $day in
     echo "Invalid day entered"
     ;;
 esac
-
+#end 
+#output in outputs.md 

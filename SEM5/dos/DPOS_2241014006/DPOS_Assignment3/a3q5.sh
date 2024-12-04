@@ -8,9 +8,9 @@ read selling_price
 
 if [ `echo "$selling_price > $cost_price" | bc` -eq 1 ]
 then
-  profit=$(echo "$selling_price - $cost_price" | bc)
+	profit=$(echo "$selling_price - $cost_price" | bc)
   echo "The seller has made a profit of: $profit"
-elif [ $(echo "$selling_price < $cost_price" | bc) -eq 1 ]
+elif [ `echo "$selling_price < $cost_price" | bc` -eq 1 ]
 then
   loss=$(echo "$cost_price - $selling_price" | bc)
   echo "The seller has incurred a loss of: $loss"

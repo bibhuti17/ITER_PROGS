@@ -1,6 +1,9 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then
+#create two file named as file1 and file2 
+#pass the files as input along with bash command
+if [ $# -ne 2 ]
+then
   echo "Error: Please provide exactly two file names as arguments."
   exit 1
 fi
@@ -8,7 +11,8 @@ fi
 file1=$1
 file2=$2
 
-if cmp -s "$file1" "$file2"; then
+if cmp -s "$file1" "$file2"
+then
   echo "Files $file1 and $file2 have same content."
   rm "$file2"
   echo "So $file2 is deleted."

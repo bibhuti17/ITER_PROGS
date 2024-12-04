@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# Check if exactly three arguments are provided
-if [ $# -ne 3 ]; then
+#Give input along with command
+# Check for 3- arguments 
+if [ $# -ne 3 ]
+then
   echo "Invalid input"
   echo "Enter input in the following format:"
   echo "op1 operator op2"
   exit 1
 fi
 
-# Assign arguments to variables
+
 op1=$1
 operator=$2
 op2=$3
@@ -28,7 +30,7 @@ case $operator in
     echo "$op1 x $op2 = $result"
     ;;
   /)
-    result=$(echo "scale=2; $op1 / $op2" | bc)
+    result=$(echo "$op1 / $op2" | bc)
     echo "$op1 / $op2 = $result"
     ;;
   %)
