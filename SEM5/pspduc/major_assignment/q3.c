@@ -1,70 +1,88 @@
 #include <stdio.h>
 
-void merge_sorted_arrays(const double *array1, int size1, const double *array2, int size2, double *output, int *output_size) {
-    int i = 0, j = 0, k = 0;
-
-    // Merge the two arrays while avoiding duplicates
-    while (i < size1 && j < size2) {
-        if (array1[i] < array2[j]) {
-            // Add to output if not a duplicate
-            if (k == 0 || output[k - 1] != array1[i]) {
-                output[k++] = array1[i];
-            }
-            i++;
-        } else if (array1[i] > array2[j]) {
-            // Add to output if not a duplicate
-            if (k == 0 || output[k - 1] != array2[j]) {
-                output[k++] = array2[j];
-            }
-            j++;
-        } else {
-            // Both values are equal, add one of them and skip duplicates
-            if (k == 0 || output[k - 1] != array1[i]) {
-                output[k++] = array1[i];
-            }
-            i++;
-            j++;
-        }
+void merge(const double *array1, int size1, const double *array2, int size2, double *output, int *output_size, int i, int j, int k)
+{
+    if (i >= size1 && j >= size2)
+    {
+        *output_size = k;
+        return;
     }
 
-    // Add remaining elements from array1
-    while (i < size1) {
-        if (k == 0 || output[k - 1] != array1[i]) {
-            output[k++] = array1[i];
+    if (i < size1 && (j >= size2 || array1[i] < array2[j]))
+    {
+        if (k == 0 || output[k - 1] != array1[i])
+        {
+            output[k] = array1[i];
+            k++;
         }
-        i++;
+        merge(array1, size1, array2, size2, output, output_size, i + 1, j, k);
     }
-
-    // Add remaining elements from array2
-    while (j < size2) {
-        if (k == 0 || output[k - 1] != array2[j]) {
-            output[k++] = array2[j];
+    else if (j < size2 && (i >= size1 || array2[j] < array1[i]))
+    {
+        if (k == 0 || output[k - 1] != array2[j])
+        {
+            output[k] = array2[j];
+            k++;
         }
-        j++;
+        merge(array1, size1, array2, size2, output, output_size, i, j + 1, k);
     }
-
-    *output_size = k; // Update the size of the output array
+    else if (i < size1 && j < size2 && array1[i] == array2[j])
+    {
+        if (k == 0 || output[k - 1] != array1[i])
+        {
+            output[k] = array1[i];
+            k++;
+        }
+        merge(array1, size1, array2, size2, output, output_size, i + 1, j + 1, k);
+    }
 }
 
-int main() {
-    double array1[] = {1.0, 3.0, 5.0, 7.0};
-    double array2[] = {2.0, 3.0, 6.0, 8.0};
-    
-    int size1 = sizeof(array1) / sizeof(array1[0]);
-    int size2 = sizeof(array2) / sizeof(array2[0]);
-    
-    // Allocate memory for the merged output array
-    double output[size1 + size2]; 
-    int output_size;
+void merge_arrays(const double *array1, int size1, const double *array2, int size2, double *output, int *output_size)
+{
+    merge(array1, size1, array2, size2, output, output_size, 0, 0, 0);
+}
 
-    merge_sorted_arrays(array1, size1, array2, size2, output, &output_size);
+void main()
+{
+    int size1, size2, i, output_size;
 
-    // Print the merged result
+    printf("Enter the number of elements for the 1st array and 2nd array : \n");
+    scanf("%d %d", &size1, &size2);
+
+    double array1[size1], array2[size2], output[size1 + size2];
+
+    printf("Enter %d elements for the 1st array:\n", size1);
+    for (i = 0; i < size1; i++)
+    {
+        scanf("%lf", &array1[i]);
+    }
+
+    printf("Enter %d elements for the 2nd array:\n", size2);
+    for (i = 0; i < size2; i++)
+    {
+        scanf("%lf", &array2[i]);
+    }
+
+    merge_arrays(array1, size1, array2, size2, output, &output_size);
+
     printf("Merged Array: ");
-    for (int i = 0; i < output_size; i++) {
+    for (int i = 0; i < output_size; i++)
+    {
         printf("%.1f ", output[i]);
     }
     printf("\n");
-
-    return 0;
 }
+
+// Enter the number of elements for the 1st array and 2nd array : 
+// 5 3
+// Enter 5 elements for the 1st array:
+// 1
+// 2
+// 3
+// 4
+// 5
+// Enter 3 elements for the 2nd array:
+// 1
+// 8
+// 10
+// Merged Array: 1.0 2.0 3.0 4.0 5.0 8.0 10.0 
