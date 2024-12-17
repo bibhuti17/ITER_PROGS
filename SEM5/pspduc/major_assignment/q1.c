@@ -38,9 +38,9 @@ void do_next_op(char operator, double operand, double *acc) {
 int main() {
     char operator, operand, acc = 0.0;
 
-    printf("Simple Calculator\n");
+    printf("<-------------------Simple Calculator\n------------------------>");
     printf("Enter operations in the format: operator operand\n");
-    printf("Valid operators: +, -, *, /, ^ (power), q (quit)\n");
+    printf("Valid operators: +, -, *, /, ^ (power), 2 (exit)\n");
 
     while (1) {
         scan_data(&operator, &operand);
