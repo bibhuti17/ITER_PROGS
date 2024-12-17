@@ -66,3 +66,16 @@ int main()
     printf("Final result is %.4lf\n", acc);
     return 0;
 }
+
+// <-------------------Simple Calculator------------------------>
+// Enter operations in the format: operator operand
+// Valid operators: +, -, *, /, ^ (power), e (exit)
+// + 5
+// Result so far is 5.0000
+// ^ 2
+// Result so far is 25.0000
+// / 2.0
+// Result so far is 12.5000
+// e
+// 0
+// Final result is 12.5000
