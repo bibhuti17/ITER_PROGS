@@ -17,7 +17,7 @@ void solve_quadratic(double a, double b, double c, int *has_real_roots, double *
     }
 }
 
-int main() {
+void main() {
     double a, b, c;
     int has_real_roots;
     double root1, root2;
@@ -40,5 +40,4 @@ int main() {
         printf("No real roots exist for the given coefficients.\n");
     }
 
-    return 0;
 }
