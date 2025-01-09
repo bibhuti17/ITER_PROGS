@@ -5,7 +5,7 @@ void solve_quadratic(double a, double b, double c, int *has_real_roots, double *
     double discriminant = b * b - 4 * a * c;
 
     if (discriminant > 0) {
-        *has_real_roots = 2;
+        *has_real_roots = 1;
         *root1 = (-b + sqrt(discriminant)) / (2 * a);
         *root2 = (-b - sqrt(discriminant)) / (2 * a);
     } else if (discriminant == 0) {
