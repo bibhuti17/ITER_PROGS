@@ -1,5 +1,5 @@
 #include <iostream>
-// #include <string>
+#include <string>
 using namespace std;
 
 class BankAccount {
@@ -11,10 +11,10 @@ private:
 
 public:
     void initializeAccount(string name, long accNum, string type, double initialBalance) {
-        depositorName = name;
-        accountNumber = accNum;
-        accountType = type;
-        balance = initialBalance;
+        this->depositorName = name;
+        this->accountNumber = accNum;
+        this->accountType = type;
+        this->balance = initialBalance;
     }
 
     void deposit(double amount) {
@@ -42,49 +42,32 @@ public:
     void displayInfo() {
         cout << "\nAccount Information:" << endl;
         cout << "Name: " << depositorName << endl;
-        cout << "Account Number: " << accountNumber << endl;
-        cout << "Account Type: " << accountType << endl;
         cout << "Balance: Rs. " << balance << endl;
     }
 };
 
 int main() {
-    BankAccount accounts[10];
-    int numCustomers;
+    BankAccount account;
+    string name, type;
+    long accNum;
+    double initialBalance;
     
-    cout << "Enter number of customers (max 10): ";
-    cin >> numCustomers;
+    cout << "Enter account holder name: ";
+    getline(cin, name);
     
-    if(numCustomers > 10) {
-        cout << "Maximum 10 customers allowed. Setting to 10." << endl;
-        numCustomers = 10;
-    }
+    cout << "Enter account number: ";
+    cin >> accNum;
     
-    for(int i = 0; i < numCustomers; i++) {
-        string name, type;
-        long accNum;
-        double initialBalance;
-        
-        cout << "\nEnter details for customer " << (i+1) << ":" << endl;
-        
-        cin.ignore();  // Clear input buffer
-        cout << "Enter account holder name: ";
-        getline(cin, name);
-        
-        cout << "Enter account number: ";
-        cin >> accNum;
-        
-        cin.ignore();
-        cout << "Enter account type (savings/current): ";
-        getline(cin, type);
-        
-        cout << "Enter initial balance: ";
-        cin >> initialBalance;
+    cin.ignore();  // Clear input buffer
+    cout << "Enter account type (savings/current): ";
+    getline(cin, type);
+    
+    cout << "Enter initial balance: ";
+    cin >> initialBalance;
 
-        accounts[i].initializeAccount(name, accNum, type, initialBalance);
-    }
+    account.initializeAccount(name, accNum, type, initialBalance);
     
-    int choice, accIndex;
+    int choice;
     double amount;
     
     do {
@@ -95,32 +78,21 @@ int main() {
         cout << "\nEnter your choice (1-4): ";
         cin >> choice;
 
-        if(choice != 4) {
-            cout << "Enter customer number (1-" << numCustomers << "): ";
-            cin >> accIndex;
-            accIndex--; // Convert to 0-based index
-            
-            if(accIndex < 0 || accIndex >= numCustomers) {
-                cout << "Invalid customer number!" << endl;
-                continue;
-            }
-        }
-
         switch(choice) {
             case 1:
                 cout << "Enter amount to deposit: ";
                 cin >> amount;
-                accounts[accIndex].deposit(amount);
+                account.deposit(amount);
                 break;
             
             case 2:
                 cout << "Enter amount to withdraw: ";
                 cin >> amount;
-                accounts[accIndex].withdraw(amount);
+                account.withdraw(amount);
                 break;
             
             case 3:
-                accounts[accIndex].displayInfo();
+                account.displayInfo();
                 break;
             
             case 4:
